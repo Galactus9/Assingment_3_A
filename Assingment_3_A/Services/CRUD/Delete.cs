@@ -29,13 +29,7 @@ namespace Assingment_3_A.Services.CRUD
             //{
             //    Console.WriteLine(a);
 
-            var cert = appDBContext.CertificateOfEachCandidates
-                .Where(c => c.candidate.Id == id).Include  (c => c.scorePerTopic);
-            foreach (var score in cert.Include(c=>c.scorePerTopic))
-            {
-            Console.WriteLine(score);
 
-            }
             //appDBContext.Candidates.Remove(obj);
             //appDBContext.SaveChanges();
 

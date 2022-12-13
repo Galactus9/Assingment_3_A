@@ -12,5 +12,9 @@ namespace Assingment_3_A.Models
         public string Title { get; set; }
         public int Score { get; set; }
 
+    public override string ToString()
+    {
+        return $"Id : {Id}\t Title : {Title}\t Max Score : {Score}";
+    }
     }
 }

@@ -14,7 +14,7 @@ namespace Assingment_3_A.Models
         public Certificate certificate { get; set; }
         public DateTime DateOfExamination { get; set; }
         public DateTime ScoreReportDate { get; set; }
-        public virtual ICollection<CandidateScorePerTopic> scorePerTopic { get; set; }
+        public ICollection<CandidateScorePerTopic> scorePerTopic { get; set; }
         public int totalScore { get; set; }
         public string Resualt { get; set; }
 

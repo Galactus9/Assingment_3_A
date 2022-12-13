@@ -37,10 +37,20 @@ namespace Assingment_3_A.Services.CRUD
                         {
                             Console.WriteLine("please try again and enter date in YYYY-MM-DD format");
                         }
-                        prop.SetValue(obj, DateTime.Parse(Console.ReadLine()));
 
                     }
-
+                        prop.SetValue(obj, DateTime.Parse(Console.ReadLine()));
+                    //Console.Write($"{prop.Name}: ");
+                    //DateTime.TryParse(Console.ReadLine(), out var x);
+                    //while (!x() is typeof(DateTime))
+                    //{
+                    //    var x = DateTime.Parse(Console.ReadLine());
+                    //    if (x.GetType() == typeof(DateTime))
+                    //    {
+                    //        prop.SetValue(obj, x); break;
+                    //    }
+                    //}
+                    //prop.SetValue(obj, DateTime.Parse(Console.ReadLine()), null);
                 }
 
 
@@ -55,7 +65,7 @@ namespace Assingment_3_A.Services.CRUD
                 else if (prop.PropertyType == typeof(int))
                 {
                     Console.Write($"{prop.Name}: ");
-                    prop.SetValue(obj, int.Parse(Console.ReadLine()));
+                    prop.SetValue(obj, int.Parse(Console.ReadLine()), null);
                 }
             }
             appDBContext.Candidates.Add(obj);

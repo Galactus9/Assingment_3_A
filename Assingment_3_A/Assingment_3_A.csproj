@@ -57,13 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202212071716030_Initial.cs" />
-    <Compile Include="Migrations\202212071716030_Initial.designer.cs">
-      <DependentUpon>202212071716030_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212111058208_Certificates.cs" />
-    <Compile Include="Migrations\202212111058208_Certificates.designer.cs">
-      <DependentUpon>202212111058208_Certificates.cs</DependentUpon>
+    <Compile Include="Migrations\202212132255351_Initial.cs" />
+    <Compile Include="Migrations\202212132255351_Initial.designer.cs">
+      <DependentUpon>202212132255351_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Candidate.cs" />
@@ -94,11 +90,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212071716030_Initial.resx">
-      <DependentUpon>202212071716030_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212111058208_Certificates.resx">
-      <DependentUpon>202212111058208_Certificates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212132255351_Initial.resx">
+      <DependentUpon>202212132255351_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

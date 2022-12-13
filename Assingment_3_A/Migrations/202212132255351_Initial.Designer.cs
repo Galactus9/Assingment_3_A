@@ -13,7 +13,7 @@ namespace Assingment_3_A.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202212071716030_Initial"; }
+            get { return "202212132255351_Initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,10 +3,36 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Certificates : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Candidates",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        MidleName = c.String(),
+                        Gender = c.String(),
+                        NativeLanguage = c.String(),
+                        BirthDate = c.DateTime(nullable: false),
+                        PhotoIdType = c.String(),
+                        PhotoIdNumber = c.String(),
+                        PhotoIdIssueDate = c.DateTime(nullable: false),
+                        Email = c.String(),
+                        Address = c.String(),
+                        AddressLine2 = c.String(),
+                        City = c.String(),
+                        Region = c.String(),
+                        PostalCode = c.String(),
+                        Country = c.String(),
+                        LandlineNumber = c.String(),
+                        MobileNumber = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.CertificateOfEachCandidates",
                 c => new
@@ -16,11 +42,11 @@
                         ScoreReportDate = c.DateTime(nullable: false),
                         totalScore = c.Int(nullable: false),
                         Resualt = c.String(),
-                        candidate_Id = c.Int(),
+                        candidate_Id = c.Int(nullable: false),
                         certificate_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Candidates", t => t.candidate_Id)
+                .ForeignKey("dbo.Candidates", t => t.candidate_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Certificates", t => t.certificate_Id)
                 .Index(t => t.candidate_Id)
                 .Index(t => t.certificate_Id);
@@ -78,6 +104,7 @@
             DropTable("dbo.CertificateTopics");
             DropTable("dbo.Certificates");
             DropTable("dbo.CertificateOfEachCandidates");
+            DropTable("dbo.Candidates");
         }
     }
 }

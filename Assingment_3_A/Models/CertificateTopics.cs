@@ -2,7 +2,7 @@
 
 namespace Assingment_3_A.Models
 {
-    public class CertificateTopics
+    internal class CertificateTopics
     {
 
         public int Id { get; set; }

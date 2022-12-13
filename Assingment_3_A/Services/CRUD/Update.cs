@@ -24,10 +24,28 @@ namespace Assingment_3_A.Services.CRUD
                 }
                 else if (prop.PropertyType == typeof(DateTime))
                 {
+
                     Console.Write($"{prop.Name}: ");
-                    var propValue = prop.GetValue(obj, null).ToString();
+                    var propValue = prop.GetValue(obj).ToString();
                     SendKeys.SendWait(propValue);
-                    prop.SetValue(obj, DateTime.Parse(Console.ReadLine()), null);
+
+                    while (true)
+                    {
+
+                        var input = Console.ReadLine();
+                        if (DateTime.TryParse(input, out var date))
+                        {
+                            prop.SetValue(obj, date);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("please try again and enter date in YYYY-MM-DD format");
+                        }
+                        prop.SetValue(obj, DateTime.Parse(Console.ReadLine()));
+
+                    }
+
 
                 }
                 else if (prop.PropertyType == typeof(string))

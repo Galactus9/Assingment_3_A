@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,12 @@ namespace Assingment_3_A.Services.Data
         {
 
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CertificateOfEachCandidate>().HasRequired<Candidate>(c => c.candidate).WithMany().WillCascadeOnDelete(true);
+        }
+
 
     }
 }

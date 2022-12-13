@@ -1,10 +1,13 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure.Design;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,37 +26,19 @@ namespace Assingment_3_A
     {
         static void Main(string[] args)
         {
-            
-            AppDBContext appDBContext = new AppDBContext();
 
+            //NewMethod();
             //Acses to a list of objects that are used as properties of of another object(Lazy Loading)
-            var cert = appDBContext.Certificates
-                .Where(c => c.Id == 1)
-                .FirstOrDefault();
 
-            appDBContext.Entry(cert).Collection(c => c.CerificateTopics).Load();
-            foreach (var certTopip in cert.CerificateTopics)
-            {
-                Console.WriteLine(certTopip);
-            }
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            //Includ
+            //var cert = appDBContext.Certificates
+            //    .Where(c => c.Id == 1).Include(c => c.CertificateTopics)
+            //    .FirstOrDefault();
+            //Console.WriteLine(cert.CertificateTopics);
+            //foreach (var a in cert.CertificateTopics)
+            //{
+            //    Console.WriteLine(a);
+            //}
 
 
 
@@ -116,8 +101,41 @@ namespace Assingment_3_A
             {
                 return;
             }
+
+
+
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //AppDBContext appDBContext= new AppDBContext();
+
+        //    var cert = appDBContext.Certificates
+        //        .Where((c => c.Id == 1)).FirstOrDefault();
+        //    appDBContext.Entry(cert).Collection(c => c.CertificateTopics).Load();
+        //    foreach (var certTopip in cert.CertificateTopics)
+        //    {
+        //        Console.WriteLine(certTopip);
+        //    }
+        //    Console.WriteLine(cert);
+
+        
     }
 }
 

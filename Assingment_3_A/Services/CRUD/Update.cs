@@ -45,8 +45,6 @@ namespace Assingment_3_A.Services.CRUD
                         prop.SetValue(obj, DateTime.Parse(Console.ReadLine()));
 
                     }
-
-
                 }
                 else if (prop.PropertyType == typeof(string))
                 {
@@ -66,6 +64,5 @@ namespace Assingment_3_A.Services.CRUD
             appDBContext.Candidates.AddOrUpdate(obj);
             appDBContext.SaveChanges();
         }
-
     }
 }

@@ -20,6 +20,8 @@ namespace Assingment_3_A.Services.CRUD
             int id = int.Parse(Console.ReadLine());
             AppDBContext appDBContext = new AppDBContext();
             Candidate obj = appDBContext.Candidates.Find(id);
+            appDBContext.Candidates.Remove(obj);
+            appDBContext.SaveChanges();
 
             //var cert = appDBContext.Certificates
             //    .Where(c => c.Id == 1).Include(c => c.CertificateTopics)
@@ -31,7 +33,15 @@ namespace Assingment_3_A.Services.CRUD
 
 
             //appDBContext.Candidates.Remove(obj);
-            //appDBContext.SaveChanges();
+            //appDBContext.SaveChanges();CandidateScorePerTopic
+            //CandidateScorePerTopic
+            //    Console.WriteLine("Give the ID of the candidate you want to view the certificates");
+            //int candnumb = Convert.ToInt32(Console.ReadLine());
+            //var viewcands = appDBContext.Certificates.SqlQuery($"SELECT * FROM Certificates WHERE CandidateNumber = {candnumb}");
+            //foreach (Certificate cert in viewcands.ToList())
+            //{
+            //    Console.WriteLine(cert);
+            //}
 
         }
     }

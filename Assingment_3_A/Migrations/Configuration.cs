@@ -172,7 +172,7 @@
                     foreach (var certTopic in certTopics)
                     {
                         num = rnd.Next(10, certTopic.MaxScore);
-                        listOfCandidateScorePerTopic1.Add(new CandidateScorePerTopic { Title = certTopic.Title, Score = num });
+                        listOfCandidateScorePerTopic1.Add(new CandidateScorePerTopic { Title = certTopic.Title, Score = num, candidate = candidate });
                     }
                     cert1.DateOfExamination = DateTime.Now;
                     cert1.ScoreReportDate = DateTime.Now;

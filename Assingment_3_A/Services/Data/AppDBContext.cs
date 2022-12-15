@@ -15,6 +15,7 @@ namespace Assingment_3_A.Services.Data
         public virtual DbSet<Candidate> Candidates { get; set; }
         public virtual DbSet<Certificate> Certificates { get; set; }
         public virtual DbSet<CertificateOfEachCandidate> CertificateOfEachCandidates { get; set; }
+        //public virtual DbSet<CandidateScorePerTopic> CandidateScorePerTopic { get; set; }
         public AppDBContext() : base("Assingment3A")
         {
 
@@ -23,6 +24,7 @@ namespace Assingment_3_A.Services.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CertificateOfEachCandidate>().HasRequired<Candidate>(c => c.candidate).WithMany().WillCascadeOnDelete(true);
+            modelBuilder.Entity<CandidateScorePerTopic>().HasRequired<Candidate>(c => c.candidate).WithMany().WillCascadeOnDelete(true);
         }
 
 

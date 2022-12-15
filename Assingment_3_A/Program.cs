@@ -27,22 +27,6 @@ namespace Assingment_3_A
         static void Main(string[] args)
         {
 
-            //NewMethod();
-            //Acses to a list of objects that are used as properties of of another object(Lazy Loading)
-
-            //Includ
-            //var cert = appDBContext.Certificates
-            //    .Where(c => c.Id == 1).Include(c => c.CertificateTopics)
-            //    .FirstOrDefault();
-            //Console.WriteLine(cert.CertificateTopics);
-            //foreach (var a in cert.CertificateTopics)
-            //{
-            //    Console.WriteLine(a);
-            //}
-
-
-
-
             string SelectedOption;
             SelectedOption = Menu.MenuGenerator("Admin", "Candidate", "Exit");
             if (SelectedOption == "Admin")
@@ -74,7 +58,7 @@ namespace Assingment_3_A
                 }
                 else if (SelectedOption == "See Results")
                 {
-                    Console.WriteLine("SomeDay I will sow you");
+                    Result.CandidateResults();
                 }
                 else
                 {
@@ -83,10 +67,11 @@ namespace Assingment_3_A
             }
             else if (SelectedOption == "Candidate")
             {
+
                 SelectedOption = Menu.MenuGenerator("List of Candidate’s Certificates", "Export of Candidate’s Certificates in a .pdf forma", "Exit");
                 if (SelectedOption == "List of Candidate’s Certificates")
                 {
-                    Console.WriteLine("Project under constraction please comeback later!!!!!!!!");
+                    CanadidateCertificate.CandidateCertificates();
                 }
                 else if (SelectedOption == "Export of Candidate’s Certificates in a .pdf forma")
                 {

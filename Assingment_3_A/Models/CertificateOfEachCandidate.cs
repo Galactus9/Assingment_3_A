@@ -18,5 +18,20 @@ namespace Assingment_3_A.Models
         public int totalScore { get; set; }
         public string Resualt { get; set; }
 
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            //return $"First Name : {candidate.FirstName}\t Last Name : {candidate.LastName}\t Id : {candidate.Id}";
+
+            sb.Append($"First Name : {candidate.FirstName}\t Last Name : {candidate.LastName} Id : {candidate.Id}");
+
+                foreach (var scorePT in scorePerTopic)
+                {
+                    sb.Append($"Title : {scorePT.Title}\t Max Score : {scorePT.Score}");
+                }
+            return sb.ToString(); ;
+        }
     }
+
 }
